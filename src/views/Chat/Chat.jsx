@@ -28,7 +28,7 @@ export default function Chat() {
     subscribe(handleMessageReceived);
     return () => unsubscribe();
     console.log(unsubscribe);
-
+    //not to sure how to check if its unsubbing for me
     // TODO: Subscribe to message changes, using handleMessageReceived
     // as the callback function
     // Don't forget to return a cleanup method (`unsubscribe`)
