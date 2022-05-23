@@ -16,3 +16,6 @@ jobs:
     - run: npm test
       env:
         CI: true
+          SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_API_URL }}
+          SUPABASE_KEY: ${{ secrets.REACT_APP_SUPABASE_API_KEY }}
+
