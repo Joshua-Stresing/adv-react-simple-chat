@@ -15,10 +15,19 @@ export async function sendMessage(email, status = 0) {
 }
 
 export function subscribe(onMessage = (_message) => {}) {
+  return client
+    .from('messages')
+    .on('*', (payload) => {
+      console.log('Change received!', payload);
+      onMessage(payload.new);
+    })
+    .subscribe();
+
   // TODO: Subscribe to changes for the `messages` table
   // and call `onMessage` with the newly added row
 }
 
 export function unsubscribe() {
+  console.log('it worked');
   return client.removeAllSubscriptions();
 }
